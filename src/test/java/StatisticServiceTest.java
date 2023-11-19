@@ -17,4 +17,14 @@ public class StatisticServiceTest {
 
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    void testFindMaxWithSingleValue() {
+        StatisticService statisticService = new StatisticService();
+
+        long[] incomesInBillions = {8};
+        long actual = statisticService.findMax(incomesInBillions);
+
+        Assertions.assertEquals(8, actual);
+    }
+
 }
