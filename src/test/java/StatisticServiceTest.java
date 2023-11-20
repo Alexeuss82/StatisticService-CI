@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
 public class StatisticServiceTest {
-
     @Test
     void findMax() {
         StatisticService service = new StatisticService();
@@ -18,13 +17,12 @@ public class StatisticServiceTest {
         Assertions.assertEquals(expected, actual);
     }
     @Test
-    void testFindMaxWithSingleValue() {
-        StatisticService statisticService = new StatisticService();
+        void testFindMaxWhenMaxIsInMiddle() {
+        StatisticService service = new StatisticService();
 
-        long[] incomesInBillions = {8};
-        long actual = statisticService.findMax(incomesInBillions);
+        long[] incomes = {12, 8, 50, 4, 11, 3, 8};
+        long actual = service.findMax(incomes);
 
-        Assertions.assertEquals(8, actual);
+        Assertions.assertEquals(50, actual);
     }
-
 }
